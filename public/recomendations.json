@@ -1,0 +1,31 @@
+[
+    {
+        "name": "Alejandra Olazagasti",
+        "linkedin": "https://www.linkedin.com/in/alejandra-olazagasti/",
+        "commentary": "Tuve la oportunidad de ser compañera de Alexander y la fortuna de realizar proyectos a su lado. Es un programador lleno de conocimiento, domina muchos lenguajes de programación así como sus diferentes frameworks y librerías. Es alguien de quien puedes aprender todos los días, ya que siempre está dispuesto a compartir su conocimiento y a guiarte. Tiene talento y muchas habilidades que le permiten identificar errores en el código fácilmente para resolverlo. Lo disingo por ser una persona que está en constante crecimiento personal y profesional, en búsqueda de nuevo conocimiento y aprendizaje. No dudo en que tendrá mucho éxito en su camino como programador, lo recomiendo ampliamente.",
+        "photo": "alejandra-olazagasti.png",
+        "bgColor": "bg-pink-400"
+    },
+    {
+        "name": "Jesus Clemente",
+        "linkedin": "https://www.linkedin.com/in/jesus-maria-clemente-garcia/",
+        "commentary": "Con alexander hemos vivido buenos momentos durante el desarrollo de diferentes proyestos, aportando humor compañerismo y sus grandes capacidades en javascript, css, react, vue, sass, entre otras tecnologias para culminar satisfactoriamente cada proyectos.",
+        "photo": "jesus-clemente.jpg",
+        "bgColor": "bg-blue-400"
+
+    },
+    {
+        "name": "Martin Vergara Téllez",
+        "linkedin": "https://www.linkedin.com/in/mart%C3%ADn-vergara-529527245/",
+        "commentary": "Alexander es un programador dedicado, con una lógica de programación envidiable y tiene grandes habilidades para solucionar problemas. Además tiene liderazgo y aptitudes para el trabajo en equipo y constantemente se esfuerza por mejorar sus habilidades.",
+        "photo": "martin-vergara-tellez.jpg",
+        "bgColor": "bg-rainbow"
+    },
+    {
+        "name": "Raúl Gomez",
+        "linkedin": "https://www.linkedin.com/in/rauljgomez/",
+        "commentary": "Alexander es un programador demasiado experto y autodidacta, tiene un manejo de lógicas de programación super exacta, tiene un buen manejo de muchos lenguajes y buen manejo para las interfaces y procesos de un proyecto! Como persona, es amigable, extrovertido, audaz, super inteligente y tiene mucha habilidad para la resolución de problemas, responsable y constante.",
+        "photo": "raul-gomez.jpg",
+        "bgColor": "bg-green-400"
+    }
+]

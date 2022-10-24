@@ -1,0 +1,158 @@
+[
+    {
+        "title": "E-Commerce",
+        "description": "A simple E-Commerce",
+        "information": "A clear example of e-commerce, it gets the products and filter them by its titles and/or categories.\nAlso has carts and a lists of bought products.",
+        "demo": "https://legendary-kulfi-521170.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "typescript",
+            "react",
+            "tailwindcss",
+            "axios",
+            "react-simplify",
+            "sass",
+            "react-router-dom",
+            "react-slideshow-image"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/e-commerce/desktop.png",
+            "mobile": "/img/projects/e-commerce/mobile.png"
+        },
+        "developmentTime": "7 days",
+        "difficulty": "normal"
+    },
+    {
+        "title": "Weather App",
+        "description": "Know your weather",
+        "information": "An usefull application to get the weather of your city.",
+        "demo": "https://golden-alfajores-7f89ff.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "axios",
+            "react",
+            "tailwindcss"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/weather-app/desktop.png",
+            "mobile": "/img/projects/weather-app/mobile.png"
+        },
+        "developmentTime": "1 hour",
+        "difficulty": "easy"
+    },
+    {
+        "title": "Cards App",
+        "description": "Get a phrase",
+        "information": "An hyper-minimalistic application to get random phrases of some interesting autors.",
+        "demo": "https://jocular-beignet-5e8a50.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "react",
+            "tailwindcss"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/cards-app/desktop.png",
+            "mobile": "/img/projects/cards-app/mobile.png"
+        },
+        "developmentTime": "1 hour",
+        "difficulty": "easy"
+    },
+    {
+        "title": "Brainfk App",
+        "description": "A simple Brainf*ck interpreter",
+        "information": "Brainf*ck is an esoteric language that can be used to some simple things.\nIn this example i did implement my own interpreter of Brainf*ck with TypeScript.",
+        "demo": "https://chipper-parfait-d03071.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "typescript",
+            "react",
+            "tailwindcss"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/brainfk-app/desktop.png",
+            "mobile": "/img/projects/brainfk-app/mobile.png"
+        },
+        "developmentTime": "3 days",
+        "difficulty": "normal"
+    },
+    {
+        "title": "Rick & Morty App",
+        "description": "Know about Rick & Morty characters",
+        "information": "This project was as an activity for Academlo and my first project using Tailwind CSS, it allowed me to get acquainted with this framework.\nI did use of Axios to get the data of one of the most popular and public API available, Rick & Morty API.\nAn interesting CSS effect of cards is available in this example.",
+        "demo": "https://storied-figolla-ac31da.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "typescript",
+            "react",
+            "tailwindcss",
+            "axios",
+            "react-simplify",
+            "sass"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/rickandmory-app/desktop.png",
+            "mobile": "/img/projects/rickandmory-app/mobile.png"
+        },
+        "developmentTime": "3 days",
+        "difficulty": "normal"
+    },
+    {
+        "title": "Bitcoin Price App",
+        "description": "Know the Bitcoin's price",
+        "information": "Would you like to know the Bitcoin price? Here you go!\nThis app gets the actual price of bitcoin and shares it with you, it has some money conversions.",
+        "demo": "https://wondrous-longma-1f4f75.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "typescript",
+            "react",
+            "tailwindcss",
+            "axios",
+            "sass"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/bitcoinprice-app/desktop.png",
+            "mobile": "/img/projects/bitcoinprice-app/mobile.png"
+        },
+        "developmentTime": "5 hours",
+        "difficulty": "easy"
+    },
+    {
+        "title": "Epic Regex Tester",
+        "description": "An util regex tester",
+        "information": "This usefull regex able you to tests your regex-expressions and know the result output of them.",
+        "demo": "https://aesthetic-daifuku-dca5df.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "typescript",
+            "react",
+            "sass"
+        ],
+        "authors": [
+            "Alexander Casas"
+        ],
+        "images": {
+            "desktop": "/img/projects/regextester-app/desktop.png",
+            "mobile": "/img/projects/regextester-app/mobile.png"
+        },
+        "developmentTime": "2 days",
+        "difficulty": "normal"
+    }
+]

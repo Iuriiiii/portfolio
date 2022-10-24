@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+}
+
+* {
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #222831;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: gray;
+    }
+}
+
+body {
+    @apply mt-12;
+    color: #fff;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.scene-3d {
+    perspective: 600px;
+
+    .object-3d {
+        position: relative;
+        transform-style: preserve-3d;
+        // overflow-x: hidden;
+
+        >div {
+            position: absolute;
+            transition: transform 1s;
+        }
+    }
+}
+
+.project-show-effect {
+    animation: project-show-iii 0.6s ease-out forwards;
+}
+
+.project-hide-effect {
+    animation: project-hide-ii 0.6s ease-out forwards;
+}
+
+@keyframes project-show {
+    from {
+        display: block;
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes project-show-ii {
+    from {
+        display: block;
+        transform: rotateY(90deg) translateZ(-430px);
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        transform: initial;
+        opacity: 1;
+    }
+}
+
+@keyframes project-show-iii {
+    0% {
+        display: block;
+        transform: rotateX(90deg) translateZ(1000px) translateY(600px);
+        opacity: 1;
+    }
+
+    100% {
+        display: block;
+        transform: initial;
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes project-hide-ii {
+    from {
+        display: block;
+        transform: initial;
+        opacity: 1;
+    }
+
+    to {
+        display: block;
+        transform: rotateY(90deg) translateZ(-490px);
+        opacity: 0;
+    }
+}
+
+.project-left-3d {
+    display: block;
+    opacity: 0;
+    transform: rotateY(-90deg) translateZ(-430px);
+}
+
+.project-middle-3d {
+    opacity: 1;
+    transform: initial;
+}
+
+.project-right-3d {
+    display: block;
+    opacity: 0;
+    transform: rotateY(90deg) translateZ(-430px);
+}
+
+.title-3d {
+    animation: effect-3d-title 1.3s ease-out forwards;
+}
+
+.subtitle-i {
+    opacity: 0;
+    animation: effect-3d-subtitle-i 0.8s ease-out forwards 2s;
+
+}
+
+@keyframes effect-3d-subtitle-i {
+    from {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: initial;
+    }
+}
+
+@keyframes effect-3d-title {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    25% {
+        opacity: 0;
+        transform: rotateX(75deg) translateZ(100px);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: rotateX(10deg) translateZ(100px);
+    }
+
+    75% {
+        opacity: 0.6;
+        transform: rotateX(0deg) translateZ(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: initial;
+    }
+}
+
+.bg-rainbow {
+    background: linear-gradient(rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100%) 0 0/100% 200%;
+    animation: move-rainbow 2s linear infinite;
+}
+
+@keyframes move-rainbow {
+    to {
+        background-position: 0 -200%
+    }
+}
+
+@layer components {
+
+    .shadow-from-top {
+        background: linear-gradient(rgba(23 23 23 / 1), rgba(23 23 23 / 0));
+        padding-bottom: 30px;
+    }
+
+    .shadow-from-bottom {
+        background: linear-gradient(to top, rgba(23 23 23 / 1), rgba(23 23 23 / 0));
+        padding-top: 30px;
+    }
+
+    div[role="tablist"] {
+        justify-content: center;
+
+        >button {
+            @apply text-zinc-900;
+
+            &[aria-selected="true"] {
+                @apply text-white;
+            }
+        }
+    }
+
+    .flex-full {
+        flex: 0 0 100%;
+    }
+
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+
+    .animate-show {
+        animation: fade-in 1s linear forwards;
+    }
+
+    .delay-3000 {
+        animation-delay: 3000ms;
+    }
+
+    .perspective {
+        perspective: 1800px;
+    }
+
+    .perspective-none {
+        perspective: none;
+    }
+
+    @for $i from 0 to 10 {
+        perspective-#{$i} {
+            perspective: 100px*$i;
+        }
+    }
+
+    .transform-style-3d {
+        transform-style: preserve-3d;
+    }
+
+    .project-front {
+        transform: rotateY(80deg);
+    }
+
+    .project-right {}
+
+    .page {
+        transform-style: preserve-3d;
+        transform: rotateY(0deg);
+    }
+
+    .page.turn {
+        transform: rotateY(-180deg);
+    }
+
+    .front,
+    .back {
+        backface-visibility: hidden;
+    }
+
+    .back {
+        transform: rotateY(-180deg);
+    }
+}
+
+/* CSS Animations */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
