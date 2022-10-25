@@ -1,5 +1,30 @@
 [
     {
+        "title": "Pokemon App",
+        "description": "Look at those amazing Pokemons",
+        "information": "In this colaborative and interesting project for Academlo i was in charge of the mechanics of the site (nHTTP Requestings, filtering pagination and configuration).\nThe incredible style of the page as done by Alejandra Olazagasti",
+        "demo": "https://alejandraolazagasti-pokedex.netlify.app/",
+        "tecnologies": [
+            "vite",
+            "axios",
+            "react",
+            "redux",
+            "sass",
+            "react-router-dom",
+            "react-paginate"
+        ],
+        "authors": [
+            "Alexander Casas",
+            "Alejandra Olazagasti"
+        ],
+        "images": {
+            "desktop": "/img/projects/pokemon-app/desktop.png",
+            "mobile": "/img/projects/pokemon-app/mobile.png"
+        },
+        "developmentTime": "1 week",
+        "difficulty": "normal"
+    },
+    {
         "title": "E-Commerce",
         "description": "A simple E-Commerce",
         "information": "A clear example of e-commerce, it gets the products and filter them by its titles and/or categories.\nAlso has carts and a lists of bought products.",

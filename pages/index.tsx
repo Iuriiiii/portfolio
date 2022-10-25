@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useRef, useState } from 'react';
 import Section from '../components/Section';
-import { AiFillHome } from 'react-icons/ai';
+import { AiFillHome, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import { IoPeopleCircleSharp } from 'react-icons/io5';
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im';
 import RecomendationCard from '../components/RecomendationCard';
@@ -14,6 +14,10 @@ import { useGlobal } from 'react-simplify/common';
 import SectionDescriber from '../components/SectionDescriber';
 import { BsFillBriefcaseFill } from 'react-icons/bs';
 import recomendations from '../public/recomendations.json';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { GiProcessor } from 'react-icons/gi';
 
 /* https://codepen.io/devdojo/pen/qBrEQqM */
 function togglePageFlip(el: HTMLElement) {
@@ -55,7 +59,7 @@ function PageContentTemplate(props: IPageContent) {
     return (
         <div className={`${props.type} flex-center px-2 sm:px-5 md:px-20 absolute w-full h-full bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: `url(${props.background})` }}>
             <div className={`w-32 h-32 ${props.imgClass || ''}`}>
-                <img src={props.src} />
+                <Image src={props.src} width='100%' height='100%' />
             </div>
             {props.children}
         </div >
@@ -79,6 +83,7 @@ const Home: NextPage = () => {
     const [drawProjects, setDrawProjects] = useState(false);
     const projectsRef = useRef<IProjectsRef>({ do: true, index: 1, projects: [] });
     const [projectIndex] = useGlobal('projectIndex', 0);
+    const reviews = useRef<(HTMLDivElement | null)[]>([]);
 
     useEffect(() => {
         const scrollEvent = (ev: Event) => {
@@ -146,21 +151,45 @@ const Home: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Alexander Casas - Portfolio</title>
-                <meta name='description' content="Alexander's Portfolio" />
+                <meta charSet='utf-8' />
+                <meta name='robots' content='follow' />
+                <meta name='keywords' content='Programmer, Developer, Portfolio, Alexander Casas' />
                 <link rel='icon' href='/favicon.ico' />
+
+                {/* <!-- Primary Meta Tags --> */}
+                <title>Alexander Casas - Portfolio ✅</title>
+                <meta name="title" content="Alexander Casas - Portfolio" />
+                <meta name="description" content="An usefull webpage that will show you information about my work history" />
+
+                {/* <!-- Open Graph / Facebook --> */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://alexdeveloper.me/" />
+                <meta property="og:title" content="Alexander Casas - Portfolio" />
+                <meta property="og:description" content="An usefull webpage that will show you information about my work history" />
+                <meta property="og:image" content="https://alexdeveloper.me/img/meta/thumb.png" />
+
+                {/* <!-- Twitter --> */}
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="https://alexdeveloper.me/" />
+                <meta property="twitter:title" content="Alexander Casas - Portfolio" />
+                <meta property="twitter:description" content="An usefull webpage that will show you information about my work history" />
+                <meta property="twitter:image" content="https://alexdeveloper.me/img/meta/thumb.png" />
+
+                <meta name='theme-color' content='#0F172A' />
+                <meta name='twitter:card' content='summary_large_image' />
             </Head>
 
             <header className='fixed top-0 w-full h-12 bg-slate-900 z-10'>
                 <nav className='flex-center md:justify-end md:pr-3 h-full w-full text-3xl gap-5'>
                     <a href='#home'><AiFillHome className='cursor-pointer hover:scale-110' /></a>
-                    <a href='#tecnologies'><BsFillBriefcaseFill className='cursor-pointer hover:scale-110' /></a>
+                    <a href='#projects'><BsFillBriefcaseFill className='cursor-pointer hover:scale-110' /></a>
+                    <a href='#tecnologies'><GiProcessor className='cursor-pointer hover:scale-110' /></a>
                     <a href='#recomendations'><IoPeopleCircleSharp className='cursor-pointer hover:scale-110' /></a>
                 </nav>
             </header>
 
             {/* Front section */}
-            <Section id='home' _ref={refs[0]} className='bg-no-repeat bg-fixed bg-right md:bg-center md:bg-cover flex-center flex-col ' style={{ backgroundImage: 'url("/img/background/html-design-blur.webp")' }}>
+            <Section id='home' _ref={refs[0]} className='bg-no-repeat bg-fixed bg-right md:bg-center md:bg-cover flex-center flex-col ' style={{ backgroundImage: "url('/img/background/html-design-blur.webp')" }}>
                 <div className='text-center -translate-y-4 scene-3d'>
                     <div className='object-3d'>
                         <h1 className='text-3xl font-bold mb-3 title-3d'>Alexander Casas</h1>
@@ -204,8 +233,12 @@ const Home: NextPage = () => {
             <Section id='recomendations' _ref={refs[2]} className='bg-slate-400 overflow-y-scroll w-[calc(100vw*4)] flex snap-x snap-mandatory'>
                 <SectionDescriber title='Reviews & Comments' descripton='Some comments and reviews from people that i have worked with' color='bg-green-500' />
 
-                {recomendations.map(recomendation =>
-                    <RecomendationCard className={recomendation.bgColor} name={recomendation.name} linkedin={recomendation.linkedin} src={`/img/recomendators/${recomendation.photo}`}>
+                {recomendations.map((recomendation, index) =>
+                    <RecomendationCard cref={reference => reviews.current.push(reference)} key={index} id={recomendation.id} className={recomendation.bgColor} name={recomendation.name} linkedin={recomendation.linkedin} src={`/img/recomendators/${recomendation.photo}`}>
+                        <div className='absolute top-0 flex-center justify-between w-full text-3xl'>
+                            <button onClick={() => reviews.current.filter((e) => e).from(index - 1)!.scrollIntoView({ behavior: 'smooth' })}><AiOutlineArrowLeft /></button>
+                            <button onClick={() => reviews.current.filter((e) => e).from(index + 1)!.scrollIntoView({ behavior: 'smooth' })}><AiOutlineArrowRight /></button>
+                        </div>
                         <div className='h-4'>
                             <ImQuotesLeft className='absolute left-3' />
                             <ImQuotesRight className='absolute right-3' />
@@ -217,56 +250,6 @@ const Home: NextPage = () => {
                         </div>
                     </RecomendationCard>
                 )}
-                {/* <RecomendationCard className='bg-pink-400' name='Alejandra Olazagasti' linkedin='https://www.linkedin.com/in/alejandra-olazagasti/' src='/img/recomendators/alejandra-olazagasti.png'>
-                    <div className='h-4'>
-                        <ImQuotesLeft className='absolute left-3' />
-                        <ImQuotesRight className='absolute right-3' />
-                    </div>
-                    <div className='relative overflow-y-scroll h-28 p-3 text-justify font-bold'>
-                        <p>
-                            Tuve la oportunidad de ser compañera de Alexander y la fortuna de realizar proyectos a su lado.
-                            Es un programador lleno de conocimiento, domina muchos lenguajes de programación así como sus diferentes frameworks y librerías. Es alguien de quien puedes aprender todos los días, ya que siempre está dispuesto a compartir su conocimiento y a guiarte.
-                            Tiene talento y muchas habilidades que le permiten identificar errores en el código fácilmente para resolverlo. Lo disingo por ser una persona que está en constante crecimiento personal y profesional, en búsqueda de nuevo conocimiento y aprendizaje.
-                            No dudo en que tendrá mucho éxito en su camino como programador, lo recomiendo ampliamente.
-                        </p>
-                    </div>
-                </RecomendationCard>
-
-                <RecomendationCard className='bg-blue-400' name='Jesus Clemente' src='/img/recomendators/jesus-clemente.jpg' linkedin='https://www.linkedin.com/in/jesus-maria-clemente-garcia/'>
-                    <div className='h-4'>
-                        <ImQuotesLeft className='absolute left-3' />
-                        <ImQuotesRight className='absolute right-3' />
-                    </div>
-                    <div className='relative overflow-y-scroll h-28 p-3 text-justify font-bold'>
-                        <p>
-                            Con alexander hemos vivido buenos momentos durante el desarrollo de diferentes proyestos, aportando humor compañerismo y sus grandes capacidades en javascript, css, react, vue, sass, entre otras tecnologias para culminar satisfactoriamente cada proyectos.
-                        </p>
-                    </div>
-                </RecomendationCard>
-                <RecomendationCard className='bg-stone-400' name='Martin Vergara Téllez' src='/img/recomendators/martin-vergara-tellez.jpg' linkedin='https://www.linkedin.com/in/mart%C3%ADn-vergara-529527245/'>
-                    <div className='h-4'>
-                        <ImQuotesLeft className='absolute left-3' />
-                        <ImQuotesRight className='absolute right-3' />
-                    </div>
-                    <div className='relative overflow-y-scroll h-28 p-3 text-justify font-bold'>
-                        <p>
-                            Alexander es un programador dedicado, con una lógica de programación envidiable y tiene grandes habilidades para solucionar problemas. Además tiene liderazgo y aptitudes para el trabajo en equipo y constantemente se esfuerza por mejorar sus habilidades.
-                        </p>
-                    </div>
-                </RecomendationCard>
-                <RecomendationCard className='bg-green-400' name='Raúl Gomez' src='/img/recomendators/raul-gomez.jpg' linkedin='https://www.linkedin.com/in/rauljgomez/'>
-                    <div className='h-4'>
-                        <ImQuotesLeft className='absolute left-3' />
-                        <ImQuotesRight className='absolute right-3' />
-                    </div>
-                    <div className='relative overflow-y-scroll h-28 p-3 text-justify font-bold'>
-                        <p>
-                            Alexander es un programador demasiado experto y autodidacta, tiene un manejo de lógicas de programación super exacta, tiene un buen manejo de muchos lenguajes y buen manejo para las interfaces y procesos de un proyecto!
-
-                            Como persona, es amigable, extrovertido, audaz, super inteligente y tiene mucha habilidad para la resolución de problemas, responsable y constante.
-                        </p>
-                    </div>
-                </RecomendationCard> */}
             </Section>
 
             <footer className='fixed bottom-3 left-3 h-8 sm:h-10 flex flex-row gap-3 justify-center w-[calc(100vw-0.75rem*2)] sm:w-auto  cursor-pointer'>

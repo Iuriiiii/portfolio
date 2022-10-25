@@ -23,7 +23,7 @@ const SectionDescriber = (props: Props) => {
                 <h2 className='text-3xl text-center'>{props.title}</h2>
                 <p>{props.descripton}</p>
 
-                <div className='text-center text-3xl'><button><GiClick /></button></div>
+                <div className='text-center text-3xl animate-pulse'><button><GiClick /></button></div>
             </div>
         </div>
     )
