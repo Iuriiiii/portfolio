@@ -19,8 +19,8 @@ const SectionDescriber = (props: Props) => {
 
     return (
         <div onClick={sectionHider} className={`z-10 absolute top-0 left-0 w-full h-full flex-center cursor-pointer duration-[1700ms] ${props.color || 'bg-zinc-600'}`}>
-            <div className='-translate-y-10'>
-                <h2 className='text-3xl text-center'>{props.title}</h2>
+            <div className='-translate-y-10 px-5 text-center'>
+                <h2 className='text-3xl'>{props.title}</h2>
                 <p>{props.descripton}</p>
 
                 <div className='text-center text-3xl animate-pulse'><button><GiClick /></button></div>

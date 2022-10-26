@@ -35,7 +35,7 @@ const ProjectCard = (props: Props) => {
                         <button onClick={() => setprojectIndex(projectIndex + 1)} className='z-20 bg-neutral-900 bg-opacity-70  text-5xl transition-transform hover:scale-125 absolute right-5' type='button'><BsArrowRightSquare /></button>
                         <div className='absolute text-4xl mb-5 space-x-5 flex flex-col md:flex-row transition-transform bg-neutral-900 p-2 md:p-5 rounded-full cursor-pointer bg-opacity-70'>
                             <button className='hover:scale-110' onClick={() => setRead(true)}><HiInformationCircle /></button>
-                            <a className='hover:scale-110' href={props.demo} target='_blank' rel='noreferrer'><AiFillPlayCircle /></a>
+                            <a className='hover:scale-110' href={props.demo} target='_blank' rel='noreferrer nofollow'><AiFillPlayCircle /></a>
                         </div>
                         {
                             props.authors.length > 1 && <div className='cursor-default absolute mt-5 p-5 bg-yellow-300 h-12 flex-center translate-y-14 rounded-full'>

@@ -5,8 +5,10 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  safelist: ['bg-pink-400', 'bg-blue-400', 'bg-zink-400'],
   theme: {
     extend: {
+
     },
   },
   plugins: [

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 interface Props { }
 
-const fourOneFour = (props: Props) => {
+const FourOneFour = (props: Props) => {
     const router = useRouter();
 
     useEffect(() => {
@@ -16,4 +16,4 @@ const fourOneFour = (props: Props) => {
     );
 }
 
-export default fourOneFour
+export default FourOneFour

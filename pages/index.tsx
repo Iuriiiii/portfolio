@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useRef, useState } from 'react';
 import Section from '../components/Section';
-import { AiFillHome, AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
+import { AiFillHome, AiOutlineArrowLeft, AiOutlineArrowRight, AiOutlineCheck, AiOutlineDownload } from 'react-icons/ai';
 import { IoPeopleCircleSharp } from 'react-icons/io5';
 import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im';
 import RecomendationCard from '../components/RecomendationCard';
@@ -13,6 +13,8 @@ import { IProjectsRef } from '../types';
 import { useGlobal } from 'react-simplify/common';
 import SectionDescriber from '../components/SectionDescriber';
 import { BsFillBriefcaseFill } from 'react-icons/bs';
+import { BiUserCircle } from 'react-icons/bi';
+import { RiFileUserLine } from 'react-icons/ri';
 import recomendations from '../public/recomendations.json';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -179,12 +181,13 @@ const Home: NextPage = () => {
                 <meta name='twitter:card' content='summary_large_image' />
             </Head>
 
-            <header className='fixed top-0 w-full h-12 bg-slate-900 z-10'>
+            <header className='fixed top-0 w-full h-12 bg-slate-900 z-20'>
                 <nav className='flex-center md:justify-end md:pr-3 h-full w-full text-3xl gap-5'>
                     <a href='#home'><AiFillHome className='cursor-pointer hover:scale-110' /></a>
                     <a href='#projects'><BsFillBriefcaseFill className='cursor-pointer hover:scale-110' /></a>
                     <a href='#tecnologies'><GiProcessor className='cursor-pointer hover:scale-110' /></a>
                     <a href='#recomendations'><IoPeopleCircleSharp className='cursor-pointer hover:scale-110' /></a>
+                    <a href='#aboutme'><RiFileUserLine className='cursor-pointer text-white hover:scale-110' /></a>
                 </nav>
             </header>
 
@@ -236,8 +239,8 @@ const Home: NextPage = () => {
                 {recomendations.map((recomendation, index) =>
                     <RecomendationCard cref={reference => reviews.current.push(reference)} key={index} id={recomendation.id} className={recomendation.bgColor} name={recomendation.name} linkedin={recomendation.linkedin} src={`/img/recomendators/${recomendation.photo}`}>
                         <div className='absolute top-0 flex-center justify-between w-full text-3xl'>
-                            <button onClick={() => reviews.current.filter((e) => e).from(index - 1)!.scrollIntoView({ behavior: 'smooth' })}><AiOutlineArrowLeft /></button>
-                            <button onClick={() => reviews.current.filter((e) => e).from(index + 1)!.scrollIntoView({ behavior: 'smooth' })}><AiOutlineArrowRight /></button>
+                            <button onClick={() => reviews.current.filter((e) => e).from(index - 1)!.scrollIntoView({ behavior: 'smooth', inline: 'center' })}><AiOutlineArrowLeft /></button>
+                            <button onClick={() => reviews.current.filter((e) => e).from(index + 1)!.scrollIntoView({ behavior: 'smooth', inline: 'center' })}><AiOutlineArrowRight /></button>
                         </div>
                         <div className='h-4'>
                             <ImQuotesLeft className='absolute left-3' />
@@ -251,12 +254,22 @@ const Home: NextPage = () => {
                     </RecomendationCard>
                 )}
             </Section>
+            <Section id='aboutme' _ref={refs[3]} className='bg-lime-600 overflow-y-scroll w-[calc(100vw*4)] flex snap-x snap-mandatory'>
+                <object data='/alexander-casas-curriculum-en.pdf' type='application/pdf' width='100%' height='100%'>
+                    <div className='w-full h-full space-y-5 flex-center flex-col -translate-y-10 text-3xl text-center'>
+                        <div className='text-5xl'><AiOutlineCheck /></div>
+                        <h2>Download Curriculum</h2>
+                        <a href='/alexander-casas-curriculum-en.pdf' rel='nofollow' className='animate-bounce text-5xl'><AiOutlineDownload /></a>
+                    </div>
+                </object>
+            </Section>
 
-            <footer className='fixed bottom-3 left-3 h-8 sm:h-10 flex flex-row gap-3 justify-center w-[calc(100vw-0.75rem*2)] sm:w-auto  cursor-pointer'>
-                <a href='https://www.linkedin.com/in/alexnqn/' target='_blank'><img className='transition-all h-full hover:scale-110' src='/img/linkedin-logo.png' alt='linkedin' /></a>
-                <a href='https://github.com/Iuriiiii' target='_blank'><img className='animate-bounce transition-all h-full invert  hover:scale-110' src='/img/github-logo.png' alt='github' /></a>
-                <a href='mailto:alexandercasasnqn@gmail.com' target='_blank'><img className='transition-all h-full  hover:scale-110' src='/img/email-icon.png' alt='email' /></a>
-                <a href='https://join.skype.com/invite/DlbDjk4muZGc' target='_blank'><img className='transition-all h-full  hover:scale-110' src='/img/skype-logo.png' alt='skype' /></a>
+
+            <footer className='fixed z-20 bottom-3 left-3 h-8 sm:h-10 flex flex-row gap-3 justify-center w-[calc(100vw-0.75rem*2)] sm:w-auto  cursor-pointer'>
+                <a href='https://www.linkedin.com/in/alexnqn/' target='_blank' rel='noreferrer'><img className='transition-all h-full hover:scale-110' src='/img/linkedin-logo.png' alt='linkedin' /></a>
+                <a href='https://github.com/Iuriiiii' target='_blank' rel='noreferrer'><img className='animate-bounce transition-all h-full invert  hover:scale-110' src='/img/github-logo.png' alt='github' /></a>
+                <a href='mailto:alexandercasasnqn@gmail.com' target='_blank' rel='noreferrer'><img className='transition-all h-full  hover:scale-110' src='/img/email-icon.png' alt='email' /></a>
+                <a href='https://join.skype.com/invite/DlbDjk4muZGc' target='_blank' rel='noreferrer'><img className='transition-all h-full  hover:scale-110' src='/img/skype-logo.png' alt='skype' /></a>
             </footer>
 
             {/* <div className='h-[calc(100vh-64px)] snap-start scroll-mt-16 hidden'></div> */}
