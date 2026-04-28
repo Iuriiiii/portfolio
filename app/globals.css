@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #201d1d;
+  --foreground: #fdfcfc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: "Berkeley Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: "Berkeley Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-opencode-dark: #201d1d;
+  --color-opencode-light: #fdfcfc;
+  --color-opencode-gray: #9a9898;
+  --color-opencode-surface: #302c2c;
+  --color-opencode-border: rgba(15, 0, 0, 0.12);
+  --color-opencode-outline: #646262;
+
+  --color-accent-blue: #007aff;
+  --color-danger-red: #ff3b30;
+  --color-success-green: #30d158;
+  --color-warning-orange: #ff9f0a;
+
+  --radius-opencode: 4px;
+  --radius-opencode-input: 6px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
+}
+
+/* Base styles for monospace feel */
+* {
+  border-color: var(--color-opencode-border);
 }
