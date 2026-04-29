@@ -44,7 +44,7 @@ export default function Projects() {
     <section id="projects" className="py-24 bg-opencode-dark">
       <div className="max-w-4xl mx-auto px-6">
         <h2 className="text-base font-bold text-opencode-light uppercase tracking-wider mb-12">
-          Projects
+          Most Interesting Personal Projects
         </h2>
         
         <div className="space-y-16">

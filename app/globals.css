@@ -37,3 +37,28 @@ body {
 * {
   border-color: var(--color-opencode-border);
 }
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-opencode-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-opencode-light);
+  border: 3px solid var(--color-opencode-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-opencode-gray);
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-opencode-light) var(--color-opencode-dark);
+}
