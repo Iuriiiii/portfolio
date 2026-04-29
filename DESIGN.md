@@ -2,7 +2,7 @@
 
 ## 1. Visual Theme & Atmosphere
 
-OpenCode's website embodies a terminal-native, monospace-first aesthetic that reflects its identity as an open source AI coding agent. The entire visual system is built on a stark dark-on-light contrast using a near-black background (`#201d1d`) with warm off-white text (`#fdfcfc`). This isn't a generic dark theme -- it's a warm, slightly reddish-brown dark that feels like a sophisticated terminal emulator rather than a cold IDE. The warm undertone in both the darks and lights (notice the subtle red channel in `#201d1d` -- rgb(32, 29, 29)) creates a cohesive, lived-in quality.
+OpenCode's website embodies a terminal-native, monospace-first aesthetic that reflects its identity as an open source AI coding agent. The entire visual system is built on a soft, girly pastel theme using a light pink background (`#fff0f3`) with deep berry text (`#4a1d24`). This isn't a generic light theme -- it's a warm, pastel-focused palette that feels pleasant and modern.
 
 Berkeley Mono is the sole typeface, establishing an unapologetic monospace identity. Every element -- headings, body text, buttons, navigation -- shares this single font family, creating a unified "everything is code" philosophy. The heading at 38px bold with 1.50 line-height is generous and readable, while body text at 16px with weight 500 provides a slightly heavier-than-normal reading weight that enhances legibility on screen. The monospace grid naturally enforces alignment and rhythm across the layout.
 
@@ -251,17 +251,17 @@ The color system is deliberately minimal. The primary palette consists of just t
 ## 9. Agent Prompt Guide
 
 ### Quick Color Reference
-- Page background: `#201d1d` (warm near-black)
-- Primary text: `#fdfcfc` (warm off-white)
-- Secondary text: `#9a9898` (warm gray)
-- Muted text: `#6e6e73`
-- Accent: `#007aff` (blue)
-- Danger: `#ff3b30` (red)
-- Success: `#30d158` (green)
-- Warning: `#ff9f0a` (orange)
-- Button bg: `#201d1d`, button text: `#fdfcfc`
-- Border: `rgba(15, 0, 0, 0.12)` (warm transparent)
-- Input bg: `#f8f7f7`, input border: `rgba(15, 0, 0, 0.12)`
+- Page background: `#fff0f3` (pastel pink)
+- Primary text: `#4a1d24` (deep berry)
+- Secondary text: `#a67c84` (rose gray)
+- Muted text: `#7d5e65`
+- Accent: `#ff758f` (pink)
+- Danger: `#ff4d6d` (rose red)
+- Success: `#70e000` (green)
+- Warning: `#ffb4a2` (orange)
+- Button bg: `#4a1d24`, button text: `#fff0f3`
+- Border: `rgba(74, 29, 36, 0.12)` (warm transparent)
+- Input bg: `#ffe4e9`, input border: `rgba(74, 29, 36, 0.12)`
 
 ### Example Component Prompts
 - "Create a hero section on `#201d1d` warm dark background. Headline at 38px Berkeley Mono weight 700, line-height 1.50, color `#fdfcfc`. Subtitle at 16px weight 400, color `#9a9898`. Primary CTA button (`#201d1d` bg with `1px solid #646262` border, 4px radius, 4px 20px padding, `#fdfcfc` text at weight 500)."

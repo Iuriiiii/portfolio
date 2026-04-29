@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #201d1d;
-  --foreground: #fdfcfc;
+  --background: #fff0f3;
+  --foreground: #4a1d24;
 }
 
 @theme inline {
@@ -11,17 +11,18 @@
   --font-sans: "Berkeley Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --font-mono: "Berkeley Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --color-opencode-dark: #201d1d;
-  --color-opencode-light: #fdfcfc;
-  --color-opencode-gray: #9a9898;
-  --color-opencode-surface: #302c2c;
-  --color-opencode-border: rgba(15, 0, 0, 0.12);
-  --color-opencode-outline: #646262;
+  --color-opencode-dark: #fff0f3;
+  --color-opencode-light: #4a1d24;
+  --color-opencode-gray: #a67c84;
+  --color-opencode-surface: #ffe4e9;
+  --color-opencode-border: rgba(74, 29, 36, 0.12);
+  --color-opencode-outline: #c99ea6;
 
-  --color-accent-blue: #007aff;
-  --color-danger-red: #ff3b30;
-  --color-success-green: #30d158;
-  --color-warning-orange: #ff9f0a;
+  --color-accent-blue: #ff758f;
+  --color-code-string: #8db5e6;
+  --color-danger-red: #ff4d6d;
+  --color-success-green: #70e000;
+  --color-warning-orange: #ffb4a2;
 
   --radius-opencode: 4px;
   --radius-opencode-input: 6px;

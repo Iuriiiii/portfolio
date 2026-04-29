@@ -218,11 +218,11 @@ export default function Hero() {
                   <code>
                     <span className="text-accent-blue">const</span>{' '}
                     <span className="text-opencode-light">engineer</span> = {'{'}{'\n'}
-                    {'  '}name: <span className="text-success-green">&quot;Alexander&quot;</span>,{'\n'}
-                    {'  '}lastName: <span className="text-success-green">&quot;Casas&quot;</span>,{'\n'}
+                    {'  '}name: <span className="text-code-string">&quot;Alexander&quot;</span>,{'\n'}
+                    {'  '}lastName: <span className="text-code-string">&quot;Casas&quot;</span>,{'\n'}
                     {'  '}hardWorker: <span className="text-warning-orange">true</span>,{'\n'}
                     {'  '}quickLearner: <span className="text-warning-orange">true</span>,{'\n'}
-                    {'  '}status: <span className="text-success-green">&quot;Waiting for your message&quot;</span>{'\n'}
+                    {'  '}status: <span className="text-code-string">&quot;waiting_for_your_message&quot;</span>{'\n'}
                     {'}'};
                   </code>
                 </pre>
@@ -265,10 +265,10 @@ export default function Hero() {
         </div>
         
         {/* Loading Line Container */}
-        <div className="h-[2px] w-full bg-white/10 relative">
+        <div className="h-[2px] w-full bg-opencode-light/10 relative">
           {/* Continuous Single Progress Bar */}
           <div 
-            className="absolute top-0 left-0 h-full bg-white transition-all duration-30 ease-linear"
+            className="absolute top-0 left-0 h-full bg-opencode-light transition-all duration-30 ease-linear"
             style={{ width: `${progress}%` }}
           />
         </div>

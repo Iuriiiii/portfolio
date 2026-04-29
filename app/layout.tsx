@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ConsoleWarning from "@/components/ConsoleWarning";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,8 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=download" />
       </head>
-      <body className="min-h-full flex flex-col bg-latte-white text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <ConsoleWarning />
         <Navbar />
         {children}
       </body>
