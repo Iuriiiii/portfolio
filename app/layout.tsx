@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Alexander Casas | Full-Stack Developer",
-  description: "Portfolio of Alexander Casas, a seasoned Full-Stack Developer and ICT Technician.",
+  description: "Portfolio of Alexander Casas, a seasoned Full-Stack Developer.",
 };
 
 export default function RootLayout({
